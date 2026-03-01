@@ -20,8 +20,8 @@ A simple and efficient **To-Do Task Manager** application designed to help users
 ## 🛠️ Technologies Used
 
 - **Frontend:** HTML, CSS, JavaScript  
-- **Backend (if applicable):** Java / JSP / Servlet / Django *(modify as per your project)*  
-- **Database:** MySQL / SQLite *(if used)*  
+- **Backend (if applicable):Django 
+- **Database:**  SQLite 
 - **Version Control:** Git & GitHub
 
 ---
