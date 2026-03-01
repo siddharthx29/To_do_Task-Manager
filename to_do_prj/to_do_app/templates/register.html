@@ -1,0 +1,149 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create your To-Do App account">
+    <title>Register - To-Do App</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <div class="container">
+            <div class="glass-card scale-in" style="max-width: 500px; margin: 0 auto;">
+                <!-- Icon -->
+                <div class="icon-wrapper">
+                    <img src="{% static 'images/todo_icon.png' %}" alt="To-Do Icon">
+                </div>
+
+                <!-- Welcome Message -->
+                <div class="text-center mb-3">
+                    <h3 style="color: #667eea; font-size: 1.3rem; margin-bottom: 0.5rem;">
+                        Join Us Today! 🚀
+                    </h3>
+                    <h2 style="margin-bottom: 1rem;">Create Your Account</h2>
+                    <p style="color: rgba(255, 255, 255, 0.7);">
+                        Start organizing your tasks in style
+                    </p>
+                </div>
+
+                <!-- Registration Form -->
+                <form method="post" action="/registrations/" class="fade-in-up delay-1"> 
+                    {% csrf_token %}
+
+                    <div class="form-group">
+                        <label for="id_email">Email Address</label>
+                        {{ form.email }}
+                    </div>
+
+                    <div class="form-group">
+                        <label for="id_username">Username</label>
+                        {{ form.username }}
+                    </div>
+
+                    <div class="form-group">
+                        <label for="id_password">Password</label>
+                        {{ form.password }}
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+                        <span style="position: relative; z-index: 1;">Create Account</span>
+                    </button>
+                </form>
+
+                <!-- Additional Links -->
+                <div class="text-center mt-2 fade-in-up delay-2">
+                    <p style="color: rgba(255, 255, 255, 0.6); margin-bottom: 1rem;">
+                        Already have an account?
+                    </p>
+                    <a href="/login/" class="btn btn-secondary" style="width: 100%;">
+                        <span style="position: relative; z-index: 1;">Sign In Instead</span>
+                    </a>
+
+                    <div style="margin-top: 1.5rem;">
+                        <a href="/" style="color: #00f2fe; text-decoration: none; font-weight: 500;">
+                            ← Back to Home
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Features List -->
+                <div class="mt-3 fade-in-up delay-3"
+                    style="background: rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
+                    <h4 style="color: #00f2fe; margin-bottom: 1rem; font-size: 1rem;">What you'll get:</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li
+                            style="color: rgba(255, 255, 255, 0.8); margin-bottom: 0.5rem; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: #667eea;">✓</span>
+                            Beautiful, modern interface
+                        </li>
+                        <li
+                            style="color: rgba(255, 255, 255, 0.8); margin-bottom: 0.5rem; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: #667eea;">✓</span>
+                            Unlimited task management
+                        </li>
+                        <li
+                            style="color: rgba(255, 255, 255, 0.8); margin-bottom: 0.5rem; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: #667eea;">✓</span>
+                            Secure and private
+                        </li>
+                        <li style="color: rgba(255, 255, 255, 0.8); padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: #667eea;">✓</span>
+                            Free forever
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Decorative Elements -->
+            <div
+                style="position: fixed; top: 15%; right: 10%; width: 120px; height: 120px; background: radial-gradient(circle, rgba(0, 242, 254, 0.2), transparent); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: floatIcon 7s ease-in-out infinite;">
+            </div>
+            <div
+                style="position: fixed; bottom: 20%; left: 10%; width: 100px; height: 100px; background: radial-gradient(circle, rgba(102, 126, 234, 0.2), transparent); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: floatIcon 9s ease-in-out infinite reverse;">
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="{% static 'js/animations.js' %}"></script>
+
+    <style>
+        /* Form field styling */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group input {
+            width: 100%;
+        }
+
+        /* Django form field styling */
+        form p {
+            margin-bottom: 0;
+        }
+
+        form p label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        form p input {
+            width: 100%;
+        }
+    </style>
+</body>
+
+</html>

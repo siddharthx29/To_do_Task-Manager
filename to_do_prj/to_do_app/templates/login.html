@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Login to your To-Do App account">
+    <title>Login - To-Do App</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <div class="container">
+            <div class="glass-card scale-in" style="max-width: 500px; margin: 0 auto;">
+                <!-- Icon -->
+                <div class="icon-wrapper">
+                    <img src="{% static 'images/todo_icon.png' %}" alt="To-Do Icon">
+                </div>
+
+                <!-- Welcome Message -->
+                <div class="text-center mb-3">
+                    <h3 style="color: #00f2fe; font-size: 1.3rem; margin-bottom: 0.5rem;">
+                        Welcome Back! 👋
+                    </h3>
+                    <h2 style="margin-bottom: 1rem;">Sign In to Your Account</h2>
+                    <p style="color: rgba(255, 255, 255, 0.7);">
+                        Continue your productivity journey
+                    </p>
+                </div>
+
+                <!-- Login Form -->
+                <form method="post" class="fade-in-up delay-1">
+                    {% csrf_token %}
+
+                    <div class="form-group">
+                        <label for="id_username">Username</label>
+                        {{ form.username }}
+                    </div>
+
+                    <div class="form-group">
+                        <label for="id_password">Password</label>
+                        {{ form.password }}
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+                        <span style="position: relative; z-index: 1;">Sign In</span>
+                    </button>
+                </form>
+
+                <!-- Additional Links -->
+                <div class="text-center mt-2 fade-in-up delay-2">
+                    <p style="color: rgba(255, 255, 255, 0.6); margin-bottom: 1rem;">
+                        Don't have an account?
+                    </p>
+                    <a href="/register/" class="btn btn-secondary" style="width: 100%;">
+                        <span style="position: relative; z-index: 1;">Create Account</span>
+                    </a>
+
+                    <div style="margin-top: 1.5rem;">
+                        <a href="/" style="color: #00f2fe; text-decoration: none; font-weight: 500;">
+                            ← Back to Home
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Decorative Elements -->
+            <div
+                style="position: fixed; top: 10%; left: 5%; width: 100px; height: 100px; background: radial-gradient(circle, rgba(102, 126, 234, 0.2), transparent); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: floatIcon 6s ease-in-out infinite;">
+            </div>
+            <div
+                style="position: fixed; bottom: 10%; right: 5%; width: 150px; height: 150px; background: radial-gradient(circle, rgba(245, 87, 108, 0.2), transparent); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: floatIcon 8s ease-in-out infinite reverse;">
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="{% static 'js/animations.js' %}"></script>
+
+    <style>
+        /* Form field styling */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group input {
+            width: 100%;
+        }
+
+        /* Django form field styling */
+        form p {
+            margin-bottom: 0;
+        }
+
+        form p label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        form p input {
+            width: 100%;
+        }
+    </style>
+</body>
+
+</html>

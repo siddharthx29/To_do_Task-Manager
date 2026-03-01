@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Modern To-Do App - Organize your tasks with style">
+    <title>To-Do App - Welcome</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <div class="container">
+            <!-- Hero Section -->
+            <div class="glass-card text-center scale-in">
+                <!-- Icon -->
+                <div class="icon-wrapper">
+                    <img src="{% static 'images/todo_icon.png' %}" alt="To-Do Icon">
+                </div>
+&nbsp;
+                <!-- Main Heading -->
+                <h1 class="mb-2">Welcome to To-Do App</h1>
+
+                <!-- Personalized Greeting -->
+                {% if username %}
+                <h2 class="text-gradient mb-3">Hello, {{ username }}! 👋</h2>
+                <p style="color: rgba(255, 255, 255, 0.8); font-size: 1.1rem; margin-bottom: 2rem;">
+                    Ready to organize your day and boost your productivity?
+                </p>
+                {% else %}
+                <h3 style="color: rgba(255, 255, 255, 0.9); margin-bottom: 1.5rem;">
+                    Organize Your Life, One Task at a Time
+                </h3>
+                <p
+                    style="color: rgba(255, 255, 255, 0.7); font-size: 1.1rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Experience the future of task management with our beautifully designed,
+                    feature-rich to-do application. Stay productive, stay organized.
+                </p>
+                {% endif %}
+
+                <!-- Navigation -->
+                <nav class="fade-in-up delay-2">
+                    <a href="/register/" class="btn btn-primary">
+                        <span style="position: relative; z-index: 1;">Get Started</span>
+                    </a>
+                    <a href="/login/" class="btn btn-secondary">
+                        <span style="position: relative; z-index: 1;">Sign In</span>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Simplified info -->
+            <div style="text-align:center; margin-top: 2rem;">
+                <p style="color: rgba(255, 255, 255, 0.75); max-width: 700px; margin: 0 auto;">
+                    Simple and focused: create an account or sign in to start managing your tasks.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="{% static 'js/animations.js' %}"></script>
+</body>
+
+</html>
